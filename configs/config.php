@@ -105,7 +105,7 @@ $config->component('db', [
 
  $config->component('db', [
      'dsn' => 'mysql:host=mysql48.mydevil.net;dbname=m1064_irovr',
-     'username' => 'm1064_irovr',
+     'username' => 'm1064_irovt',
      'password' => 'q7vPJEECm62SvRdFYmVy',
      'enableSchemaCache' => true,
      'schemaCacheDuration' => 0,
