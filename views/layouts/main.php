@@ -19,33 +19,48 @@ $this->beginPage();
     <body>
     <?php $this->beginBody() ?>
 
-        <?php if (YII_ENV == "local"): ?>
-            <div style="display: block; position: fixed; left: 0; right: 0; top: -2px; bottom: -2px; z-index: 100; pointer-events: none;">
-                <div style="position: absolute; left: 0; right: 0; text-align: center; margin: 20px; font-size: 50px; color: #fff; z-index: 1000; text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);">
-                    <span class="d-block d-sm-none  d-md-none  d-lg-none  d-xl-none">XS</span>
-                    <span class="d-none  d-sm-block d-md-none  d-lg-none  d-xl-none">SM</span>
-                    <span class="d-none  d-sm-none  d-md-block d-lg-none  d-xl-none">MD</span>
-                    <span class="d-none  d-sm-none  d-md-none  d-lg-block d-xl-none">LG</span>
-                    <span class="d-none  d-sm-none  d-md-none  d-lg-none  d-xl-block">XL</span>
+    <nav class="navbar navbar-expand-lg py-4">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center text-uppercase mr-auto" href="#"><img src="img/logo.svg"
+                    class="mr-2 mr-md-4" alt=""> <span class="d-none d-sm-inline-block">ARCHITECTURAL
+                    VISUALIZATION</span></a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar" style="margin-bottom: 0;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-center text-lg-left active">
+                        <a class="nav-link" href="#">work</a>
+                    </li>
+                    <li class="nav-item text-center text-lg-left">
+                        <a class="nav-link" href="#">services</a>
+                    </li>
+                    <li class="nav-item text-center text-lg-left">
+                        <a class="nav-link" href="#">about</a>
+                    </li>
+                    <li class="nav-item text-center text-lg-left">
+                        <a class="nav-link" href="#">contact</a>
+                    </li>
+                    <?php foreach (Yii::$app->menu->find()->container('default')->root()->all() as $item): ?>
+                        <li class="nav-item text-center text-lg-left active">
+                            <a class="nav-link <?= $item->isActive ? 'active' : null ?>" href="<?= $item->link; ?>"><?= $item->title; ?></a>
+                        </li> 
+                    <?php endforeach; ?>
+                </ul>
+                <div class="d-flex align-items-center language-switch justify-content-center justicy-content-lg-left ">
+                    <h5 class="mb-0 language-styles">pl</h5>
+                    <span class="slash-switcher px-2 mb-0">/</span>
+                    <h5 class="mb-0 language-styles">en</h5>
                 </div>
             </div>
-        <?php endif; ?>
-
-        <!-- Sample content -->
-        <!-- Delete these if you start your project -->
-        <div class="jumbotron custom-example">
-            <h1 class="display-3">Installed successfully!</h1>
-            <p class="lead mt-2">All content on this page is static. You can delete it in <code>views/layouts/main.php</code>.</p>
-            <hr class="my-5">
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="<?= $this->publicHtml ?>/admin" role="button">Admin</a>
-            </p>
         </div>
-        <!-- / End of samples -->
+    </nav>
 
-        <div class="container">
             <?= $content ?>
-        </div>
+        
 
     <?php $this->endBody() ?>
     </body>
