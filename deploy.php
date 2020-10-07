@@ -47,4 +47,4 @@ server('dev', 's48.mydevil.net', 22)
     ->stage('dev')
     ->env('deploy_path', '/home/bloom/domains/iro.bloom.usermd.net');
 
-set('repository', 'https://damiansky:Biti12390,@github.com/damiansky/IROVR.git');
+set('repository', 'https://damiansky:Biti12390,@github.com/damiansky/IROVRDEPLOY.git');
