@@ -1,25 +1,678 @@
-// ==================================================
-// VARIABLES
-// Overwrites the default bootstrap variables
-// and adds new ones
-
-@import "base/base";
-@import "base/variables";
-
-// ==================================================
-// BOOTSTRAP
-
-// Import whole bootstrap project
 @import "../../vendor/twbs/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
 
-// Import bootstrap grid
-// @import "../../vendor/twbs/bootstrap/scss/bootstrap-grid";
+body, html {
+    scroll-behavior: smooth;
+    font-family: 'Titillium Web', sans-serif;
+  }
 
-// Import bootstrap reboot
-// @import "../../vendor/twbs/bootstrap/scss/bootstrap-reboot";
+  @media (min-width: 1610px) {
+    * .container {
+      min-width: 1600px;
+    }
+  }
 
-// ==================================================
-// PROJECT
-// Components
+  .navbar-brand{
+    font-size: 25px;
+    color: #222a41;
+    font-weight: 600;
+    @media only screen and (max-width: 1200px) {
+        font-size: 20px;
+      }
+      &:hover{
+        list-style: none;
+        color: #222a41;
+      }
+      @media only screen and (max-width: 768px) {
+        font-size: 15px;
+      }
+      img{
+        @media only screen and (max-width: 768px) {
+          width: 59px;
+        }
+      }
+  }
 
-@import "components/custom-example";
+  .nav-link{
+    font-size: 25px;
+    color: #222a41;
+    font-weight: 400;
+    padding: 0 45px!important;
+    @media only screen and (max-width: 1600px) {
+        padding: 0 20px!important;
+      }
+      @media only screen and (max-width: 1200px) {
+        font-size: 20px;
+      }
+      &:hover{
+        list-style: none;
+        font-weight: 600;
+        color: #222a41;
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 7px 20px!important;
+        font-size: 18px;
+      }
+      @media only screen and (max-width: 700px) {
+        font-size: 16px;
+      }
+      @media only screen and (max-width: 600px) {
+        font-size: 14px;
+        padding: 7px 10px!important;
+      }
+  }
+
+  .footer-nav{
+   li:last-child{
+    a{
+      padding:0px 0px 0px 20px!important;
+      @media only screen and (max-width: 600px) {
+        padding:0px 10px 0px 10px!important;
+      }
+    }
+   }
+  }
+  
+  
+  .language-styles{
+    font-size: 25px;
+    color: #222a41;
+    font-weight: 400;
+    cursor: pointer;
+    @media only screen and (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 14px;
+    }
+    &:hover{
+        list-style: none;
+        font-weight: 600;
+        color: #222a41;
+      }
+  }
+
+  .language-switch{
+      padding-left: 45px;
+      @media only screen and (max-width: 1600px) {
+        padding-left: 20px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding-right: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+  }
+
+  .slash-switcher{
+    font-size: 25px;
+    color: #222a41;
+    font-weight: 400;
+    @media only screen and (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+
+  .main-big-header{
+    font-size: 50px;
+    color: #231f20;
+    font-weight: 400;
+    @media only screen and (max-width: 1400px) {
+      font-size: 40px;
+    }
+    @media only screen and (max-width: 900px) {
+      font-size: 35px;
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+
+  .navigation-text{
+    font-size: 25px;
+    color: #000000;
+    font-weight: 400;
+    @media only screen and (max-width: 1400px) {
+      font-size: 20px;
+    }
+    @media only screen and (max-width: 900px) {
+      font-size: 18px;
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 15px;
+    }
+  }
+
+  .navigation-text-wlh{
+    font-size: 25px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 45px;
+    @media only screen and (max-width: 1400px) {
+      font-size: 20px;
+      line-height:38px;
+    }
+    @media only screen and (max-width: 900px) {
+      font-size: 18px;
+      line-height:32px;
+    }
+    @media only screen and (max-width: 700px) {
+      line-height: 28px;
+      font-size: 15px;
+    }
+  }
+
+  .footer-text-small{
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+    @media only screen and (max-width: 900px) {
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    @media only screen and (max-width: 350px) {
+      font-size: 10px;
+    }
+  }
+
+  .medium-header{
+    font-size: 41px;
+    color: #231f20;
+    font-weight: 600;
+    @media only screen and (max-width: 900px) {
+      font-size: 36px;
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 32px;
+    }
+    @media only screen and (max-width: 490px) {
+      font-size: 30px;
+    }
+  }
+
+  .main-header-wrapper{
+      min-height: 40vh;
+  }
+
+
+
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16x9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  
+  .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0
+  }
+  
+  .goals-container{
+      padding-top: 120px;
+      padding-bottom: 120px;
+      @media only screen and (max-width: 991px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      @media only screen and (max-width: 600px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+  }
+
+  .social-media-goals-wrapper{
+      padding-top: 85px;
+      @media only screen and (max-width: 900px) {
+        padding-top: 60px;
+      }
+      @media only screen and (max-width: 600px) {
+        padding-top: 40px;
+      }
+  }
+
+  .social-media-icon{
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      border: 1px solid black;
+      padding: 10px;
+      @media only screen and (max-width: 576px) {
+        width: 32px;
+        height: 32px;
+      }
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  .latest-project:hover{
+    color: black;
+}
+
+.footer-nav{
+  padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+hr{
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-line{
+  margin: 30px 0;
+  @media only screen and (max-width: 800px) {
+    margin: 24px 0;
+  }
+  @media only screen and (max-width: 600px) {
+    margin: 20px 0;
+  }
+  @media only screen and (max-width: 500px) {
+    margin: 16px 0;
+  }
+}
+
+.section {
+  background: #000;
+  overflow: hidden;
+  color: #d9d9d9;
+}
+.section hr {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-top: 2px solid #fff;
+}
+.section h1 {
+  font-size: 64px;
+}
+.section p {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 25px;
+}
+.section .img-fluid {
+  display: none;
+}
+.section .col-6 {
+  background: url('https://placekitten.com/1189/668');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 1100px) {
+  .section .col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
+ }
+  .section .img-fluid {
+    display: block;
+ }
+}
+
+.about-main-container{
+  position: relative;
+}
+
+.about-image-wrapper{
+  position: absolute;
+  right: 0px;
+  overflow: hidden;
+  top: 209px;
+}
+
+.image-about-xxl{
+  display: none;
+  @media only screen and (min-width: 2000px) {
+    display: block;
+  }
+}
+
+.image-about-xs{
+  display: block;
+  @media only screen and (min-width: 2000px) {
+    display: none;
+  }
+}
+
+.about-ul{
+  padding-left: 0px;
+  li{
+    list-style: none;
+  }
+}
+
+.partners-wrapper{
+  img{
+    margin: 60px 30px 0 30px;
+  }
+}
+
+.form-control{
+  border: 1px solid black;
+  border-radius: 0px;
+  color: black;
+  font-size: 25px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: 15px;
+  }
+  &::placeholder{
+    color: black;
+    font-size: 25px;
+    @media only screen and (max-width: 1400px) {
+      font-size: 20px;
+    }
+    @media only screen and (max-width: 900px) {
+      font-size: 18px;
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.arrow-icon-send{
+  width: 26px;
+}
+
+a:hover{
+    color: black;
+}
+
+
+
+.form-control:focus{
+  border-color: unset;
+  box-shadow: unset;
+}
+
+.service-image-right{
+  background-image: url(img/crowne-plaza.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+
+.services-mobile-picture-abs{
+  position: absolute;
+  background-image: url(img/crowne-plaza.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 43%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  @media only screen and (min-width: 2200px) {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.right-ins-wrapper{
+  display: none;
+  @media only screen and (min-width: 2200px) {
+    display: block;
+  }
+}
+
+.right-out-wrapper{
+  position: relative;
+  margin: 90px 0 250px 0;
+  @media only screen and (max-width: 768px) {
+    margin: 0px 0 40px 0;
+  }
+}
+
+.animation-img{
+  background-image: url(img/1-KILINSKIEGO177.png);
+  @media only screen and (max-width: 2200px) {
+    display: none;
+  }
+}
+
+.animation-nd{
+  display: block;
+}
+
+.animation-abs{
+  background-image: url(img/1-KILINSKIEGO177.png);
+  left: 0;
+  right: unset;
+}
+
+.services-left-wrapper{
+  min-height: 590px;
+  @media only screen and (max-width: 768px) {
+    min-height: unset;
+  }
+}
+
+.visual-abs{
+  background-image: url(img/FITNESS_2.png);
+}
+
+.visual-right-image{
+  background-image: url(img/FITNESS_2.png);
+}
+
+.about-image{
+  background-image: url(img/about-image.png);
+}
+
+.about-image-abs{
+  background-image: url(img/about-image.png);
+}
+
+.about-out-wrapper{
+  margin: 90px 0 160px 0;
+  @media only screen and (max-width: 991px) {
+    margin: 0px 0 40px 0;
+  }
+}
+
+.services-left-wrapper-about{
+  min-height: unset;
+}
+
+.project-header-wrapper{
+  padding-left: 6.5%;
+}
+
+.arrow-down-image{
+  @media only screen and (max-width: 991px) {
+    width: 13%;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 12%;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 13%;
+  }
+}
+
+
+.navbar-toggler .icon-bar{
+  width: 22px; 
+	height: 2px;
+	background-color: black;
+	display: block;
+	transition: all 0.2s;
+	margin-top: 4px
+}
+
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+ 
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+ 
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+ 
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+ 
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+ 
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggler-scrolled{
+  padding-bottom: 50px;
+}
+
+.navbar-toggler-scrolled .icon-bar{
+  background-color: black;
+}
+
+button:focus {
+  outline: unset;
+   outline: unset;
+}
+
+.project-square-wrapper{
+  background-color: #7c7c7c;
+  position: relative;
+}
+
+.project-name-abs{
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  color: white;
+  z-index: 2;
+  display: none;
+}
+
+.project-square-wrapper:hover{
+  z-index: 1;
+  .project-name-abs{
+    display: block;
+    cursor: pointer;
+  }
+  img{
+    z-index: -1;
+    opacity: 0.6;
+  }
+  .cross{
+    display: block;
+    z-index: 2;
+    cursor: pointer;
+  }
+}
+
+.cross{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  display: none;
+  height: 100px;
+  width: 100px;
+}
+
+.cross:before, .cross:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 100px;
+  width: 8px;
+  background-color: white;
+}
+
+.cross:before {
+  transform: rotate(0deg);
+}
+.cross:after {
+  transform: rotate(90deg);
+}
+
+.cross:hover{
+  .project-picture{
+    opacity: 0.6;
+    z-index: -1;
+  }
+}
+
+.service-image-one-mobile{
+  height: 400px;
+}
+
+.service-image-one-mobile-wrapper{
+  height: 230px;
+}
+
+.service-image-one-mobile{
+  display: block;
+  margin-bottom: 30px;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+  height: 230px;
+}
+
+.service-image-second-mobile{
+  background-image: url(img/1-KILINSKIEGO177.png);
+  height: 230px;
+  margin-bottom: 30px;
+  display: block;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.service-image-third-mobile{
+  background-image: url(img/FITNESS_1.png);
+  height: 230px;
+  margin-bottom: 30px;
+  display: block;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.about-image-mobile{
+  height: 300px;
+  margin-bottom: 30px;
+}
+
