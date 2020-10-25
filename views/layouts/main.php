@@ -19,6 +19,8 @@ $this->beginPage();
     <body>
     <?php $this->beginBody() ?>
 
+
+
     <nav class="navbar navbar-expand-lg py-4">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center text-uppercase mr-auto" href="#"><img src="img/logo.svg"
@@ -32,7 +34,7 @@ $this->beginPage();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <?php foreach (Yii::$app->menu->find()->container('default')->root()->all() as $item): ?>
+                <?php foreach (Yii::$app->menu->find()->container('default')->root()->all() as $item): ?>
                         <li class="nav-item text-center text-lg-left active">
                             <a class="nav-link <?= $item->isActive ? 'active' : null ?>" href="<?= $item->link; ?>"><?= $item->title; ?></a>
                         </li> 
@@ -41,7 +43,7 @@ $this->beginPage();
                 <div class="d-flex align-items-center language-switch justify-content-center justicy-content-lg-left ">
                     <h5 class="mb-0 language-styles">pl</h5>
                     <span class="slash-switcher px-2 mb-0">/</span>
-                    <h5 class="mb-0 language-styles">en</h5>
+                    <h5 class="mb-0 language-styles active">en</h5>
                 </div>
             </div>
         </div>

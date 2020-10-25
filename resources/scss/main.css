@@ -11073,6 +11073,7 @@ body, html {
   font-size: 41px;
   color: #231f20;
   font-weight: 600;
+  line-height: 28px;
 }
 
 @media only screen and (max-width: 900px) {
