@@ -35,7 +35,7 @@ $this->beginPage();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                 <?php foreach (Yii::$app->menu->find()->container('default')->root()->all() as $item): ?>
-                        <li class="nav-item text-center text-lg-left active">
+                        <li class="nav-item text-center text-lg-left">
                             <a class="nav-link <?= $item->isActive ? 'active' : null ?>" href="<?= $item->link; ?>"><?= $item->title; ?></a>
                         </li> 
                     <?php endforeach; ?>
