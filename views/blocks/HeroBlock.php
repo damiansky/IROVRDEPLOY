@@ -24,3 +24,14 @@
             </div>
         </div>
     </section>
+
+
+    <div class="embed-container" id="hiddenwrapper"  onclick="openFullscreen();">
+        <div class="myvideo-wrapper" id="myvideo">
+            <video id="videostart" width="100%" preload loop autoplay muted>
+                <source src="videos/animation.mp4" type="video/mp4">
+            </video>
+            <button onclick="closeFullscreen();" id="closeButtonX" class="close-window-button">X</button>
+            <div id="cursor-id" class="cursor"></div>
+        </div>
+    </div>
