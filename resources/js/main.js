@@ -94,7 +94,6 @@ if (document.fullscreenElement) {
   console.log('is fullscreen');
   x.style.display = 'block';
   a = true;
-  b.style.overflowX = 'hidden'
   document.querySelector("#cursor-id").classList.remove('cursor');
   scroll = {x: window.scrollX, y: window.scrollY};
   if(a){
@@ -104,7 +103,6 @@ if (document.fullscreenElement) {
   console.log('is fullscreen');
   x.style.display = 'none';
   a = false;
-  b.style.overflowX = 'unset'
   document.querySelector("#cursor-id").classList.add('cursor');
   if(!a){
     hiddenw.style.cursor = "none";
