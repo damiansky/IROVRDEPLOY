@@ -949,7 +949,7 @@ body, html {
       height: 54px;
       position: absolute;
       pointer-events: none;
-      background: url(img/hover-video.png);
+      background: url(/img/hover-video.png);
       background-repeat: no-repeat;
       background-size: cover;
       overflow-x: hidden;
@@ -1581,7 +1581,7 @@ a:hover{
 }
 
 .how-we-do-img{
-  background-image: url(img/1-KILINSKIEGO177.png);
+  background-image: url(/img/1-KILINSKIEGO177.png);
   left: 0;
   right: unset;
   width: 47%;
@@ -1642,11 +1642,11 @@ a:hover{
 
 
 .about-image{
-  background-image: url(img/about-image.jpg);
+  background-image: url(/img/about-image.jpg);
 }
 
 .about-image-abs{
-  background-image: url(img/about-image.jpg);
+  background-image: url(/img/about-image.jpg);
   display: none;
   height: 100%;
   @media only screen and (min-width: 991px) {
@@ -2024,7 +2024,7 @@ button:focus {
 }
 
 .service-image-second-mobile{
-  background-image: url(img/1-KILINSKIEGO177.png);
+  background-image: url(/img/1-KILINSKIEGO177.png);
   height: 230px;
   margin-bottom: 30px;
   display: block;
@@ -2034,7 +2034,7 @@ button:focus {
 }
 
 .service-image-third-mobile{
-  background-image: url(img/FITNESS_1.png);
+  background-image: url(/img/FITNESS_1.png);
   height: 230px;
   margin-bottom: 30px;
   display: block;
@@ -2320,12 +2320,12 @@ button:focus {
 .project-square-image-big{
   max-height: 768px;
     a{
-      cursor: url('img/loop.svg'), pointer;
+      cursor: url('/img/loop.svg'), pointer;
     }
 }
 
 .image-small{
-  background: url('img/1duzefoto.jpg');
+  background: url('/img/1duzefoto.jpg');
   background-size: cover;
   background-position: center center;
   min-height: 224px;
@@ -2389,7 +2389,7 @@ button:focus {
 }
 
 .image-big{
-  background: url('img/1duzefoto.jpg');
+  background: url('/img/1duzefoto.jpg');
   background-size: cover;
   background-position: center center;
   min-height: 224px;
@@ -2454,7 +2454,7 @@ button:focus {
 
 .project-square-image-small{
     a{
-      cursor: url('img/loop.svg'), pointer;
+      cursor: url('/img/loop.svg'), pointer;
     }
 }
 
