@@ -56,17 +56,17 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center">
                         <div class="">
-                            <h5 class="footer-text-small">© <?= $this->varValue('footerSmallText') ?> - <br class="d-block d-sm-none"><?= $this->varValue('footerSmallTextsecond') ?><br class="d-block d-sm-block d-md-none"> <?= $this->varValue('footerSmallTextthird') ?>.
+                            <h5 class="footer-text-small">© <?= $this->varValue('footerSmallText') ?> - <br class="d-block d-sm-none"><?= $this->varValue('footerSmallTextsecond') ?>.<br class="d-block d-sm-block d-md-none"> <?= $this->varValue('footerSmallTextthird') ?>.
                             </h5>
                         </div>
                         <div class="social-media-icons-wrapper d-flex ml-auto">
-                            <a href="https://www.facebook.com/irostudiovisualization<?= $this->varValue('fblinkfooter') ?>" target="_blank">
+                            <a href="<?= $this->varValue('fblinkfooter') ?>" target="_blank">
                                 <img src="img/FB-grey.svg" class="icon-fb" alt="facebook-icon">
                             </a>
                             <a href="<?= $this->varValue('belinkfooter') ?>" class="mx-4 mx-md-5" target="_blank">
                                 <img src="img/BE-grey.svg" class="icon-be" alt="facebook-icon">
                             </a>
-                            <a href="https://www.instagram.com/iro_studio_visualization<?= $this->varValue('iglinkfooter') ?>" target="_blank">
+                            <a href="<?= $this->varValue('iglinkfooter') ?>" target="_blank">
                                 <img src="img/IG-grey.svg" class="icon-ig" alt="facebook-icon">
                             </a>
                         </div>
