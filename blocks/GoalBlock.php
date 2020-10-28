@@ -76,21 +76,21 @@ class GoalBlock extends PhpBlock
 
     private function getLeft()
     {
-        $left = Projects::find()->where(['column_id' => 1])->orderBy(['id' => SORT_DESC])->all();
+        $left = Projects::find()->where(['column_id' => Projects::COLUMN_LEFT])->orderBy(['id' => SORT_DESC])->all();
 
         return $left;
     }
 
     private function getRight()
     {
-        $right = Projects::find()->where(['column_id' => 3])->orderBy(['id' => SORT_DESC])->all();
+        $right = Projects::find()->where(['column_id' => Projects::COLUMN_RIGHT])->orderBy(['id' => SORT_DESC])->all();
 
         return $right;
     }
 
     private function getMiddle()
     {
-        $middle = Projects::find()->where(['column_id' => 2])->orderBy(['id' => SORT_DESC])->all();
+        $middle = Projects::find()->where(['column_id' => Projects::COLUMN_MIDDLE])->orderBy(['id' => SORT_DESC])->all();
 
         return $middle;
     }

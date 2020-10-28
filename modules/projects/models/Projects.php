@@ -18,11 +18,14 @@ use luya\admin\ngrest\base\NgRestModel;
  */
 class Projects extends NgRestModel
 {
+    public const COLUMN_LEFT=1;
+    public const COLUMN_MIDDLE=2;
+    public const COLUMN_RIGHT=3;
     /**
      * @inheritdoc
      */
     public $i18n = ['name'];
-
+    
     /**
      * @inheritdoc
      */
@@ -71,7 +74,7 @@ class Projects extends NgRestModel
     public function ngRestAttributeTypes()
     {
         return [
-            'column_id' => ['selectArray', 'data' => [1 => 'Lewa kolumna', 2 => 'Srodkowa kolumna', 3 => 'Prawa kolumna']],
+            'column_id' => ['selectArray', 'data' => [self::COLUMN_LEFT => 'Lewa kolumna', self::COLUMN_MIDDLE => 'Srodkowa kolumna', self::COLUMN_RIGHT => 'Prawa kolumna']],
             'name' => 'text',
             'dynamic_page' => 'cmsPage',
             'thumbnail' => 'image',

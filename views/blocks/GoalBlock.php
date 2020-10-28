@@ -52,6 +52,19 @@
         </div>
     </section>
 
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <a type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+                </a>
+                <img src="img/projektbig.png" class="img-fluid project-picture" alt="">
+            </div>
+        </div>
+    </div>
+
+
     <section class="projects-section-wrapper">
         <div class="container" style="background-color: white;">
             <div class="row d-none d-lg-flex">
