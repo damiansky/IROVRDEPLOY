@@ -4,6 +4,7 @@ namespace app\modules\projects\models;
 
 use Yii;
 use luya\admin\ngrest\base\NgRestModel;
+use luya\cms\models\NavItem;
 
 /**
  * Projects.
