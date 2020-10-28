@@ -71,9 +71,9 @@ class Projects extends NgRestModel
     public function ngRestAttributeTypes()
     {
         return [
-            'column_id' => 'number',
+            'column_id' => ['selectArray', 'data' => [1 => 'Lewa kolumna', 2 => 'Srodkowa kolumna', 3 => 'Prawa kolumna']],
             'name' => 'text',
-            'dynamic_page' => 'number',
+            'dynamic_page' => 'cmsPage',
             'thumbnail' => 'number',
         ];
     }
