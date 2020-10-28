@@ -92,4 +92,17 @@ class Projects extends NgRestModel
             ['delete', false],
         ];
     }
+
+    public function getTestView()
+    {
+        $navItem = NavItem::findOne($this->dynamic_page->getNavId());
+
+        if ($navItem->nav_item_type == NavItem::TYPE_PAGE) {
+            return $navItem->getType()->getContentAsArray()["__placeholders"][0][0]['__nav_item_page_block_items'];
+        } elseif ($navItem->nav_item_type == NavItem::TYPE_MODULE) {
+            return $navItem->getType()->getContent();
+        }
+
+        return $navItem->getType();
+    }
 }
