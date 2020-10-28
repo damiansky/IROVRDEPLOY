@@ -27,7 +27,7 @@ task('symlink:custom', function(){
     run("cd {{deploy_path}} && ln -sfn {{release_path}}/public_html public_html"); // Atomic override symlink.
     run("cd {{deploy_path}} && rm -rf current");
     run("cd {{deploy_path}} && ln -sfn {{release_path}} current");
-    //run("cd {{deploy_path}} && curl http://bloom.usermd.net/test.php");
+    run("cd {{deploy_path}} && curl http://iro.bloom.usermd.net/test.php");
 })->desc('Custom symlink');
 
 after('rollback', 'rollback:custom');
