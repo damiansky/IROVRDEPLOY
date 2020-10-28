@@ -51,3 +51,142 @@
             </div>
         </div>
     </section>
+
+    <section class="projects-section-wrapper">
+        <div class="container" style="background-color: white;">
+            <div class="row d-none d-lg-flex">
+                <div class="col-4 pl-0 pr-1">
+                    <div class="row no-gutters text-center text-lg-left">
+                        <?php foreach ($this->extraValue('left') as $projectLeft): ?>
+                            <div class="col-12 pb-2">
+                                <div class="project-square-wrapper">
+                                    <h4 class="navigation-text project-name-abs"><?= $projectLeft->name ?></h4>
+                                    <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                    <div class="cross"></div>
+                                    <a href="" class="project-square"><img src="img/3 CASE - cristal park.jpg"
+                                            class="img-fluid project-picture" alt=""></a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="col-4 px-1">
+                    <div class="row no-gutters text-center text-lg-left">
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper project-square-image-small">
+                                <a href="" data-toggle="modal" data-target="#exampleModalCenter"
+                                    class="project-square"><img src="img/11 CASE - crowne.jpg"
+                                        class="img-fluid project-picture " alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper">
+                                <h4 class="navigation-text project-name-abs">Crown</h4>
+                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                <div class="cross"></div>
+                                <a href="" class="project-square"><img src="img/12 FOTO.jpg"
+                                        class="img-fluid project-picture" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper">
+                                <h4 class="navigation-text project-name-abs">Crown</h4>
+                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                <div class="cross"></div>
+                                <a href="" class="project-square"><img src="img/13 CASE - piwna.jpg"
+                                        class="img-fluid project-picture" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 pr-0 pl-1">
+                    <div class="row no-gutters text-center text-lg-left">
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper">
+                                <h4 class="navigation-text project-name-abs">Crown</h4>
+                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                <div class="cross"></div>
+                                <a href="" class="project-square"><img src="img/21 CASE - zanat.jpg"
+                                        class="img-fluid project-picture" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper">
+                                <h4 class="navigation-text project-name-abs">Crown</h4>
+                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                <div class="cross"></div>
+                                <a href="" class="project-square"><img src="img/22 CASE - piekna duze.jpg"
+                                        class="img-fluid project-picture" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-2">
+                            <div class="project-square-wrapper">
+                                <h4 class="navigation-text project-name-abs">Crown</h4>
+                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                <div class="cross"></div>
+                                <a href="" class="project-square"><img src="img/23 CASE - acc.jpg"
+                                        class="img-fluid project-picture" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-block d-lg-none">
+            <div class="row">
+                <div class="col-12  text-center ">
+                    <img src="img/projektbig.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                        <h4 class="navigation-text mb-0">Crown plaza</h4>
+                        <h4 class="navigation-text ">View full case</h4>
+                    </div>
+                </div>
+                <div class="col-12  text-center">
+                    <img src="img/projeksmall.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                        <h4 class="navigation-text mb-0">Crown plaza</h4>
+                        <h4 class="navigation-text ">View full case</h4>
+                    </div>
+                </div>
+                <div class="col-12  text-center ">
+                    <img src="img/projektbig.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                    </div>
+                </div>
+                <div class="col-12  text-center">
+                    <img src="img/projeksmall.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                        <h4 class="navigation-text mb-0">Crown plaza</h4>
+                        <h4 class="navigation-text ">View full case</h4>
+                    </div>
+                </div>
+                <div class="col-12  text-center ">
+                    <img src="img/projektbig.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                    </div>
+                </div>
+                <div class="col-12  text-center ">
+                    <img src="img/projektbig.png" class="img-fluid" alt="">
+                    <div class="text-left project-header-wrapper my-2 my-md-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pb-4 pb-sm-5 pt-4 pt-md-0">
+            <div class="row ">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <div class="latest-projects-wrapper d-flex align-items-center text-center arrow-down-hover"
+                            style="position: relative;">
+                            <a href=""
+                                class="navigation-text latest-project text-center d-flex align-items-center arrow-lh-fix">All
+                                projects <img src="img/arrow-down.png" alt=""
+                                    class="ml-3 arrow-down-image-mobile d-block d-lg-none"></a>
+                            <img src="img/arrow-down-long.svg" class="ml-2 ml-lg-5 arrow-down-image d-none d-lg-block arrow-down-hover-img"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

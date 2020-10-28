@@ -74,7 +74,7 @@ class Projects extends NgRestModel
             'column_id' => ['selectArray', 'data' => [1 => 'Lewa kolumna', 2 => 'Srodkowa kolumna', 3 => 'Prawa kolumna']],
             'name' => 'text',
             'dynamic_page' => 'cmsPage',
-            'thumbnail' => 'number',
+            'thumbnail' => 'image',
         ];
     }
 

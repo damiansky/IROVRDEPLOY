@@ -5,6 +5,7 @@ namespace app\blocks;
 use luya\cms\base\PhpBlock;
 use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
+use app\modules\projects\models\Projects;
 
 /**
  * Hero Block.
@@ -64,6 +65,36 @@ class HeroBlock extends PhpBlock
                  ['var' => 'heroMainTextSecond', 'label' => 'Glowny opis druga linia', 'type' => self::TYPE_TEXT],
             ],
         ];
+    }
+
+    public function extraVars()
+    {
+        return [
+            'left' => $this->getLeft(),
+            'right' => $this->getRight(),
+            'middle' => $this->getMiddle(),
+        ];
+    }
+
+    private function getLeft()
+    {
+        $left = Projects::find()->where(['column_id' => 1])->orderBy(['id' => SORT_DESC])->all();
+
+        return $left;
+    }
+
+    private function getRight()
+    {
+        $right = Projects::find()->where(['column_id' => 3])->orderBy(['id' => SORT_DESC])->all();
+
+        return $right;
+    }
+
+    private function getMiddle()
+    {
+        $middle = Projects::find()->where(['column_id' => 2])->orderBy(['id' => SORT_DESC])->all();
+
+        return $middle;
     }
     
     /**
