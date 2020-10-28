@@ -30,7 +30,7 @@
                         <div class="ml-lg-auto footer-nav-wrapper">
                             <ul
                                 class="footer-nav d-flex align-items-center justify-content-between justify-content-lg-right">
-                                <li class="nav-item text-center text-lg-left active">
+                                <li class="nav-item text-center text-lg-left">
                                     <a class="nav-link footer-link" href="#"><?= $this->varValue('footerlinkone') ?></a>
                                 </li>
                                 <li class="nav-item text-center text-lg-left">

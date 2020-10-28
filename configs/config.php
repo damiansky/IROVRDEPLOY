@@ -30,6 +30,11 @@ $config = new Config('myproject', dirname(__DIR__), [
         'cmsadmin' => [
             'class' => 'luya\cms\admin\Module',
         ],
+        'projects' => [
+            'class' => 'app\modules\projects\frontend\Module',
+            'useAppViewPath' => false, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
+        ],
+        'projectsadmin' => 'app\modules\projects\admin\Module',
     ],
     'components' => [
         'db' => [
