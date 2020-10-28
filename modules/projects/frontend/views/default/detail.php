@@ -1,3 +1,3 @@
 
 
-<?php var_dump($model->dynamic_page->getTestView()) ?>
+<?php var_dump($model->getTestView()) ?>
