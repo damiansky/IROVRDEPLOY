@@ -5,6 +5,7 @@ namespace app\blocks;
 use luya\cms\base\PhpBlock;
 use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
+use app\modules\projects\models\Projects;
 
 /**
  * Goal Block.
@@ -62,6 +63,36 @@ class GoalBlock extends PhpBlock
                  ['var' => 'iglinkGoals', 'label' => 'Link do instagrama', 'type' => self::TYPE_LINK],
             ],
         ];
+    }
+
+    public function extraVars()
+    {
+        return [
+            'left' => $this->getLeft(),
+            'right' => $this->getRight(),
+            'middle' => $this->getMiddle(),
+        ];
+    }
+
+    private function getLeft()
+    {
+        $left = Projects::find()->where(['column_id' => 1])->orderBy(['id' => SORT_DESC])->all();
+
+        return $left;
+    }
+
+    private function getRight()
+    {
+        $right = Projects::find()->where(['column_id' => 3])->orderBy(['id' => SORT_DESC])->all();
+
+        return $right;
+    }
+
+    private function getMiddle()
+    {
+        $middle = Projects::find()->where(['column_id' => 2])->orderBy(['id' => SORT_DESC])->all();
+
+        return $middle;
     }
     
     /**
