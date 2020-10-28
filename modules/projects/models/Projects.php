@@ -96,6 +96,7 @@ class Projects extends NgRestModel
 
     public function getTestView()
     {
+        var_dump($this->dynamic_page->getNavId());
         $navItem = NavItem::findOne($this->dynamic_page->getNavId());
 
         if ($navItem->nav_item_type == NavItem::TYPE_PAGE) {
