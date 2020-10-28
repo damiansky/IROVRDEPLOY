@@ -1,3 +1,3 @@
 
 
-<?php var_dump($model) ?>
+<?php var_dump($model->dynamic_page) ?>

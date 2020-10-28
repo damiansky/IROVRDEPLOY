@@ -12,5 +12,7 @@ namespace app\modules\projects\frontend;
  */
 class Module extends \luya\base\Module
 {
-
+    public $urlRules = [
+        'projects/<id:\d+>' => 'projects/default/detail', // which is equals to the above
+    ];
 }
