@@ -7,18 +7,12 @@ use luya\cms\frontend\blockgroups\ProjectGroup;
 use luya\cms\helpers\BlockHelper;
 
 /**
- * Hero Block.
+ * Double Absolute Images Block.
  *
  * File has been created with `block/create` command. 
  */
-class HeroBlock extends PhpBlock
+class DoubleAbsoluteImagesBlock extends PhpBlock
 {
-    /**
-     * @var boolean Choose whether block is a layout/container/segmnet/section block or not, Container elements will be optically displayed
-     * in a different way for a better user experience. Container block will not display isDirty colorizing.
-     */
-    public $isContainer = true;
-
     /**
      * @var bool Choose whether a block can be cached trough the caching component. Be carefull with caching container blocks.
      */
@@ -42,7 +36,7 @@ class HeroBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Hero Block';
+        return 'Double Absolute Images Block';
     }
     
     /**
@@ -60,27 +54,39 @@ class HeroBlock extends PhpBlock
     {
         return [
             'vars' => [
-                 ['var' => 'heroMainText', 'label' => 'Glowny opis', 'type' => self::TYPE_TEXT],
-                 ['var' => 'heroMainTextSecond', 'label' => 'Glowny opis druga linia', 'type' => self::TYPE_TEXT],
+                 ['var' => 'leftImage', 'label' => 'Left Image', 'type' => self::TYPE_FILEUPLOAD, 'options' => ['no_filter' => false]],
+                 ['var' => 'rightImage', 'label' => 'Right image', 'type' => self::TYPE_FILEUPLOAD, 'options' => ['no_filter' => false]],
             ],
         ];
     }
     
     /**
+     * @inheritDoc
+     */
+    public function extraVars()
+    {
+        return [
+            'leftImage' => BlockHelper::fileUpload($this->getVarValue('leftImage')),            'rightImage' => BlockHelper::fileUpload($this->getVarValue('rightImage')),
+        ];
+    }
+
+    /**
      * {@inheritDoc} 
      *
-     * @param {{vars.heroMainTextSecond}}
-     * @param {{vars.heroMainText}}
+     * @param {{extras.leftImage}}
+     * @param {{extras.rightImage}}
+     * @param {{vars.leftImage}}
+     * @param {{vars.rightImage}}
     */
     public function admin()
     {
-        return '<h5 class="mb-3">Hero Block</h5>' .
+        return '<h5 class="mb-3">Double Absolute Images Block</h5>' .
             '<table class="table table-bordered">' .
-            '{% if vars.heroMainText is not empty %}' .
-            '<tr><td><b>Glowny opis</b></td><td>{{vars.heroMainText}}</td></tr>' .
+            '{% if vars.leftImage is not empty %}' .
+            '<tr><td><b>Left Image</b></td><td>{{vars.leftImage}}</td></tr>' .
             '{% endif %}'.
-            '{% if vars.heroMainTextSecond is not empty %}' .
-            '<tr><td><b>Glowny opis druga linia</b></td><td>{{vars.heroMainTextSecond}}</td></tr>' .
+            '{% if vars.rightImage is not empty %}' .
+            '<tr><td><b>Right image</b></td><td>{{vars.rightImage}}</td></tr>' .
             '{% endif %}'.
             '</table>';
     }

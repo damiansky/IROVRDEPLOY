@@ -15,6 +15,7 @@ use luya\cms\models\NavItem;
  * @property integer $column_id
  * @property string $name
  * @property integer $dynamic_page
+ * @property integer $small_image
  * @property integer $thumbnail
  */
 class Projects extends NgRestModel
@@ -22,6 +23,8 @@ class Projects extends NgRestModel
     public const COLUMN_LEFT=1;
     public const COLUMN_MIDDLE=2;
     public const COLUMN_RIGHT=3;
+    public const IMAGE_SMALL=4;
+    public const IMAGE_BIG=5;
     /**
      * @inheritdoc
      */
@@ -50,10 +53,11 @@ class Projects extends NgRestModel
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'column_id' => Yii::t('app', 'Column ID'),
-            'name' => Yii::t('app', 'Name'),
-            'dynamic_page' => Yii::t('app', 'Dynamic Page'),
+            'column_id' => Yii::t('app', 'Kolumna'),
+            'name' => Yii::t('app', 'Nazwa projektu'),
+            'dynamic_page' => Yii::t('app', 'Podstrona projektu'),
             'thumbnail' => Yii::t('app', 'Thumbnail'),
+            'small_image' => Yii::t('app', 'Rozmiar zdjecia'),
         ];
     }
 
@@ -64,7 +68,7 @@ class Projects extends NgRestModel
     {
         return [
             [['column_id', 'name'], 'required'],
-            [['column_id', 'dynamic_page', 'thumbnail'], 'integer'],
+            [['column_id', 'dynamic_page', 'thumbnail', 'small_image'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -79,6 +83,7 @@ class Projects extends NgRestModel
             'name' => 'text',
             'dynamic_page' => 'cmsPage',
             'thumbnail' => 'image',
+            'small_image' => ['selectArray', 'data' => [self::IMAGE_SMALL => 'Zdjecie male', self::IMAGE_BIG => 'Zdjecie duze']],
         ];
     }
 
@@ -88,23 +93,16 @@ class Projects extends NgRestModel
     public function ngRestScopes()
     {
         return [
-            ['list', ['column_id', 'name', 'dynamic_page', 'thumbnail']],
-            [['create', 'update'], ['column_id', 'name', 'dynamic_page', 'thumbnail']],
-            ['delete', false],
+            ['list', ['column_id', 'name', 'dynamic_page', 'thumbnail', 'small_image']],
+            [['create', 'update'], ['column_id', 'name', 'dynamic_page', 'thumbnail', 'small_image']],
+            ['delete', true],
         ];
     }
 
-    public function getTestView()
+    public function renderBlocks()
     {
-        var_dump($this->dynamic_page->getNavId());
-        $navItem = NavItem::findOne($this->dynamic_page->getNavId());
+        $navItem = NavItem::findOne($this->dynamic_page->getId());
 
-        if ($navItem->nav_item_type == NavItem::TYPE_PAGE) {
-            return $navItem->getType()->getContentAsArray()["__placeholders"][0][0]['__nav_item_page_block_items'];
-        } elseif ($navItem->nav_item_type == NavItem::TYPE_MODULE) {
-            return $navItem->getType()->getContent();
-        }
-
-        return $navItem->getType();
+        return $navItem->getType()->renderPlaceholder('content');
     }
 }

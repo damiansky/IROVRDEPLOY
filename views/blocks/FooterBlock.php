@@ -60,13 +60,13 @@
                             </h5>
                         </div>
                         <div class="social-media-icons-wrapper d-flex ml-auto">
-                            <a href="<?= $this->varValue('fblinkfooter') ?>" target="_blank">
+                            <a href="<?= $this->varValue('fblinkfooter') ? $this->varValue('fblinkfooter')['value'] : '#' ?>" target="_blank">
                                 <img src="img/FB-grey.svg" class="icon-fb" alt="facebook-icon">
                             </a>
-                            <a href="<?= $this->varValue('belinkfooter') ?>" class="mx-4 mx-md-5" target="_blank">
+                            <a href="<?= $this->varValue('belinkfooter') ? $this->varValue('belinkfooter')['value'] : '#' ?>" class="mx-4 mx-md-5" target="_blank">
                                 <img src="img/BE-grey.svg" class="icon-be" alt="facebook-icon">
                             </a>
-                            <a href="<?= $this->varValue('iglinkfooter') ?>" target="_blank">
+                            <a href="<?= $this->varValue('iglinkfooter') ? $this->varValue('iglinkfooter')['value'] : '#' ?>" target="_blank">
                                 <img src="img/IG-grey.svg" class="icon-ig" alt="facebook-icon">
                             </a>
                         </div>

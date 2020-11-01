@@ -1,3 +1,3 @@
 
 
-<?php var_dump($model->getTestView()) ?>
+<?= $model->renderBlocks() ?>

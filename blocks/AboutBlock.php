@@ -84,7 +84,7 @@ class AboutBlock extends PhpBlock
             '<tr><td><b>Mini naglowek na czym sie skupiamy</b></td><td>{{vars.wefocusHeader}}</td></tr>' .
             '{% endif %}'.
             '{% if vars.listPoints is not empty %}' .
-            '<tr><td><b>Wartosci naszej firmy</b></td><td>{{vars.listPoints}}</td></tr>' .
+            '<tr><td><b>Wartosci naszej firmy</b></td><td>{% for item in vars.listPoints %}{{item.value}},{% endfor %}</td></tr>' .
             '{% endif %}'.
             '</table>';
     }

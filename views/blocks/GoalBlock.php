@@ -36,13 +36,13 @@
                                 <div class="box-absolute d-none d-lg-block"></div>
                         </div>
                         <div class="social-media-icons-wrapper d-flex ml-auto">
-                            <a href="<?= $this->varValue('fblinkGoals') ?>" target="_blank">
+                            <a href="<?= $this->varValue('fblinkGoals') ? $this->varValue('fblinkGoals')['value'] : '#' ?>" target="_blank">
                                 <img src="/img/FB-grey.svg" class="icon-fb" alt="facebook-icon">
                             </a>
-                            <a href="<?= $this->varValue('belinkGoals') ?>" class="mx-2 mx-sm-4 mx-md-5" target="_blank">
+                            <a href="<?= $this->varValue('belinkGoals') ? $this->varValue('belinkGoals')['value'] : '#' ?>" class="mx-2 mx-sm-4 mx-md-5" target="_blank">
                                 <img src="/img/BE-grey.svg" class="icon-be" alt="facebook-icon">
                             </a>
-                            <a href="<?= $this->varValue('iglinkGoals') ?>" target="_blank">
+                            <a href="<?= $this->varValue('iglinkGoals') ? $this->varValue('iglinkGoals')['value'] : '#' ?>" target="_blank">
                                 <img src="/img/IG-grey.svg" class="icon-ig" alt="facebook-icon">
                             </a>
                         </div>
@@ -72,11 +72,11 @@
                     <div class="row no-gutters text-center text-lg-left">
                         <?php foreach ($this->extraValue('left') as $projectLeft): ?>
                             <div class="col-12 pb-2">
-                                <div class="project-square-wrapper">
+                                <div class="project-square-wrapper <?= $projectLeft->small_image == 5 ? 'picture-big-id' : 'picture-small-id' ?>">
                                     <h4 class="navigation-text project-name-abs"><?= $projectLeft->name ?></h4>
                                     <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
                                     <div class="cross"></div>
-                                    <a href="" class="project-square"><img src="img/3 CASE - cristal park.jpg"
+                                    <a href="<?= \luya\helpers\Url::toRoute('/projects/' . $projectLeft->id); ?>" class="project-square"><img src="<?= Yii::$app->storage->getImage($projectLeft->thumbnail) ? Yii::$app->storage->getImage($projectLeft->thumbnail)->getSource() : null; ?>"
                                             class="img-fluid project-picture" alt=""></a>
                                 </div>
                             </div>
@@ -85,62 +85,32 @@
                 </div>
                 <div class="col-4 px-1">
                     <div class="row no-gutters text-center text-lg-left">
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper project-square-image-small">
-                                <a href="" data-toggle="modal" data-target="#exampleModalCenter"
-                                    class="project-square"><img src="img/11 CASE - crowne.jpg"
-                                        class="img-fluid project-picture " alt=""></a>
+                    <?php foreach ($this->extraValue('middle') as $projectMiddle): ?>
+                            <div class="col-12 pb-2">
+                                <div class="project-square-wrapper <?= $projectMiddle->small_image == 5 ? 'picture-big-id' : 'picture-small-id' ?>">
+                                    <h4 class="navigation-text project-name-abs"><?= $projectMiddle->name ?></h4>
+                                    <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                    <div class="cross"></div>
+                                    <a href="<?= \luya\helpers\Url::toRoute('/projects/' . $projectMiddle->id); ?>" class="project-square"><img src="<?= Yii::$app->storage->getImage($projectMiddle->thumbnail) ? Yii::$app->storage->getImage($projectMiddle->thumbnail)->getSource() : null; ?>"
+                                            class="img-fluid project-picture" alt=""></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper">
-                                <h4 class="navigation-text project-name-abs">Crown</h4>
-                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
-                                <div class="cross"></div>
-                                <a href="" class="project-square"><img src="img/12 FOTO.jpg"
-                                        class="img-fluid project-picture" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper">
-                                <h4 class="navigation-text project-name-abs">Crown</h4>
-                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
-                                <div class="cross"></div>
-                                <a href="" class="project-square"><img src="img/13 CASE - piwna.jpg"
-                                        class="img-fluid project-picture" alt=""></a>
-                            </div>
-                        </div>
+                    <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="col-4 pr-0 pl-1">
                     <div class="row no-gutters text-center text-lg-left">
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper">
-                                <h4 class="navigation-text project-name-abs">Crown</h4>
-                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
-                                <div class="cross"></div>
-                                <a href="" class="project-square"><img src="img/21 CASE - zanat.jpg"
-                                        class="img-fluid project-picture" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper">
-                                <h4 class="navigation-text project-name-abs">Crown</h4>
-                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
-                                <div class="cross"></div>
-                                <a href="" class="project-square"><img src="img/22 CASE - piekna duze.jpg"
-                                        class="img-fluid project-picture" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-12 pb-2">
-                            <div class="project-square-wrapper">
-                                <h4 class="navigation-text project-name-abs">Crown</h4>
-                                <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
-                                <div class="cross"></div>
-                                <a href="" class="project-square"><img src="img/23 CASE - acc.jpg"
-                                        class="img-fluid project-picture" alt=""></a>
-                            </div>
-                        </div>
+                        <?php foreach ($this->extraValue('right') as $projectRight): ?>
+                                <div class="col-12 pb-2">
+                                    <div class="project-square-wrapper <?= $projectRight->small_image == 5 ? 'picture-big-id' : 'picture-small-id' ?>">
+                                        <h4 class="navigation-text project-name-abs"><?= $projectRight->name ?></h4>
+                                        <h4 class="navigation-text project-name-abs show-case-abs">View full case</h4>
+                                        <div class="cross"></div>
+                                        <a href="<?= \luya\helpers\Url::toRoute('/projects/' . $projectRight->id); ?>" class="project-square"><img src="<?= Yii::$app->storage->getImage($projectRight->thumbnail) ? Yii::$app->storage->getImage($projectRight->thumbnail)->getSource() : null; ?>"
+                                                class="img-fluid project-picture" alt=""></a>
+                                    </div>
+                                </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

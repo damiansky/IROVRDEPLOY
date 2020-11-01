@@ -27,26 +27,12 @@
                                 <h4 class="navigation-text-wlh mb-3 mb-xl-5 mt-3 mt-xl-5 "><?= $this->varValue('abouttext') ?></h4>
                                 <h4 class="navigation-text-wlh mb-3 mb-xl-5"><?= $this->varValue('wefocusHeader') ?>:</h4>
                                 <ul class="about-ul mb-0">
+                                <?php foreach($this->varValue('listPoints') as $item): ?>
                                     <li>
-                                        <h4 class="navigation-text">- <?= $this->varValue('listPoints') ?>
-                                        </h4>
+                                        <h4 class="navigation-text">- <?= $item['value'] ?></h4>
                                     </li>
-                                    <li>
-                                        <h4 class="navigation-text">- applying the ideal solution (open- endedness)
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4 class="navigation-text">- determination to achieve the perfect image
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4 class="navigation-text">- curiosity to discover new technologies and solutions
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4 class="navigation-text">- power
-                                        </h4>
-                                    </li>
+                                <?php endforeach;?>
+                                    
                                 </ul>
                             </div>
                         </div>
